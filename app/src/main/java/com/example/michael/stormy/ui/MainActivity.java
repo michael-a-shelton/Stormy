@@ -159,13 +159,13 @@ public class MainActivity extends Activity {
         Forecast forecast = new Forecast();
 
         forecast.setCurrent(getCurrentDetails(JSONData));
-        forecast.setHourlyForecast(getHourlyforecast(JSONData));
+        forecast.setHourlyForecast(getHourlyForecast(JSONData));
         forecast.setDailyForecast(getDailyForecast(JSONData));
         return forecast;
 
     }
 
-    private Hour[] getHourlyforecast(String JSONData) throws JSONException {
+    private Hour[] getHourlyForecast(String JSONData) throws JSONException {
         JSONObject forecast = new JSONObject(JSONData);
         String timezone = forecast.getString("timezone");
         JSONObject hourly = forecast.getJSONObject("hourly");
