@@ -2,6 +2,7 @@ package com.example.michael.stormy.ui;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
@@ -32,6 +33,7 @@ import java.io.IOException;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 
 
 public class MainActivity extends Activity {
@@ -204,7 +206,7 @@ public class MainActivity extends Activity {
             day.setIcon(jsonDay.getString("icon"));
             day.setTemperatureMax(jsonDay.getDouble("temperatureMax"));
             day.setTime(jsonDay.getLong("time"));
-            day.setTimezone(jsonDay.getString("timezone"));
+            //day.setTimezone(jsonDay.getString("timezone"));
 
             days[i] = day;
         }
@@ -248,5 +250,14 @@ public class MainActivity extends Activity {
         dialog.show(getFragmentManager(),"error_dialog");
 
     }
+
+    @OnClick(R.id.dailyButton)
+    public void startDailyActivity (View view) {
+        Intent intent = new Intent(this,DailyForecastAcitivity.class);
+        startActivity(intent);
+
+    }
+
+
 
 }
