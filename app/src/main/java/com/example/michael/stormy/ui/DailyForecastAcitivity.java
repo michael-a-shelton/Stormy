@@ -21,7 +21,7 @@ public class DailyForecastAcitivity extends ListActivity {
                 android.R.layout.simple_list_item_1, daysOfTheWeek);
 
         setListAdapter(adapter);
-        
+
 
     }
 
